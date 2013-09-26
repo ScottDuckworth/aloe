@@ -1,0 +1,21 @@
+aloe (All Logged Out Event) is a command-line utility which runs a command
+after everyone has logged out of the system.  It is written for Linux but
+should work for other mostly POSIX-compliant systems.
+
+Some common use cases are:
+
+Reboot the system after everyone has logged out:
+# aloe reboot
+
+Restart the X11 display manager after all graphical sessions have ended:
+# aloe -t :* service gdm restart
+
+Modify a user's home directory after they have logged out:
+# aloe -u <username> <some program>
+
+aloe works by monitoring the utmpx database, which, on most systems, is a
+discretionary database of who is logged in, but in practice it is reliable
+enough for aloe to use.
+
+By default, aloe runs in the background. Any output from the program is
+ignored, unless aloe is run in the foreground using the -f flag.

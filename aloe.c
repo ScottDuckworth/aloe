@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
   const char *tty_pattern = NULL;
   char **command;
 
-  while((opt = getopt(argc, argv, "hvfu:t:")) != -1) {
+  while((opt = getopt(argc, argv, "+hvfu:t:")) != -1) {
     switch(opt) {
     case 'h':
       usage(stdout, argv[0]);

@@ -164,6 +164,9 @@ int main(int argc, char *argv[]) {
     wait_for_event();
   } while(1);
   endutxent();
+#ifdef USE_INOTIFY
+  close(inotify_fd);
+#endif
 
   pid = fork();
   if(pid == -1) {

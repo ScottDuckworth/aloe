@@ -37,7 +37,7 @@
 static int inotify_fd, inotify_wd;
 #endif
 
-#define VERSION "0.1.1"
+#define VERSION "0.1.2"
 
 static void usage(FILE *file, const char *arg0) {
   fprintf(file,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Scott Duckworth
+ * Copyright 2013 Clemson University
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@
 static int inotify_fd, inotify_wd;
 #endif
 
-#define VERSION "0.1.1"
+#define VERSION "0.1.2"
 
 static void usage(FILE *file, const char *arg0) {
   fprintf(file,
@@ -164,6 +164,9 @@ int main(int argc, char *argv[]) {
     wait_for_event();
   } while(1);
   endutxent();
+#ifdef USE_INOTIFY
+  close(inotify_fd);
+#endif
 
   pid = fork();
   if(pid == -1) {

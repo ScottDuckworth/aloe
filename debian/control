@@ -1,0 +1,21 @@
+Source: aloe
+Section: admin
+Priority: optional
+Maintainer: Scott Duckworth <sduckwo@clemson.edu>
+Build-Depends: debhelper (>= 9.20120115)
+Standards-Version: 3.9.3
+Homepage: https://github.com/ScottDuckworth/aloe
+Vcs-Git: git://github.com/ScottDuckworth/aloe.git
+Vcs-Browser: https://github.com/ScottDuckworth/aloe
+
+Package: aloe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: run commands when all users are logged out
+ aloe (All Logged Out Event) is a command-line utility which runs a command
+ after everyone has logged out of the system. It is written for Linux but
+ should work for other mostly POSIX-compliant systems.
+ .
+ aloe works by monitoring the utmpx database, which, on most systems, is a
+ discretionary database of who is logged in, but in practice it is reliable
+ enough for aloe to use.

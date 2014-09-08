@@ -1,0 +1,68 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH ALOE 1 "September 2014"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+aloe \- run commands when all users are logged off
+.SH SYNOPSIS
+.B aloe
+.RI [ options ]
+command ...
+.br
+.SH DESCRIPTION
+\fBaloe\fP (All Logged Out Event) is a command-line utility which runs a
+command after everyone has logged out of the system.  It is written for Linux
+but should work for other mostly POSIX-compliant systems.
+
+\fBaloe\fP works by monitoring the
+.BR utmpx (5)
+database, which, on most systems, is a discretionary database of who is logged
+in, but in practice it is reliable enough for aloe to use.
+
+By default, aloe runs in the background. Any output from the program is
+ignored, unless aloe is run in the foreground using the -f flag.
+
+.SH OPTIONS
+.TP
+.B \-h
+Print a short help message.
+
+.TP
+.B \-v
+Print the version.
+
+.TP
+.B \-f
+Run in the foreground.
+
+.TP
+.B \-u \fIPATTERN\fP
+Trigger when all users matching pattern are logged out.
+
+.TP
+.B \-t \fIPATTERN\fP
+Trigger when all ttys matching pattern are logged out.
+
+.SH SEE ALSO
+.BR utmpx (5)
+
+.br
+.SH AUTHOR
+aloe was written by Scott Duckworth <sduckwo@clemson.edu>.
+
+.SH BUGS
+Please report bugs to \fIhttps://github.com/ScottDuckworth/aloe/issues\fP.
+.

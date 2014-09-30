@@ -1,0 +1,11 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: aloe
+Upstream-Contact: Scott Duckworth <sduckwo@clemson.edu>
+Source: https://github.com/ScottDuckworth/aloe
+
+Files: *
+Copyright: 2013 Clemson University
+License: GPL-3+
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-3'
+ file.
